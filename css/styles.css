@@ -1,52 +1,52 @@
 /* Estilos Generales */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;300&display=swap');
-
+ 
 :root {
     --color-principal: #062f5b;
     --color-secundario: #679dd6;
     --color-texto: #5d596b;
 }
-
+ 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+ 
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300px;
+    font-weight: 300;
 }
-
+ 
 img {
     max-width: 100%;
 }
-
+ 
 li {
     list-style-type: none;
 }
-
+ 
 a {
     text-decoration: none;
     color: #fff;
 }
-
+ 
 header {
     background-color: var(--color-principal);
 }
-
+ 
 nav {
     padding: 20px;
 }
-
+ 
 nav ul {
     display: flex;
 }
-
+ 
 nav ul li a {
     padding: 10px;
 }
-
+ 
 .bg-header {
     background-image: url("../img/bg-header.jpg"), -webkit-linear-gradient(top, #cbe3ba, #a6cc8b);
     background-repeat: no-repeat;
@@ -58,32 +58,31 @@ nav ul li a {
     align-items: center;
     height: 300px;
 }
-
+ 
 .bg-header h1 {
-    font-weight: 500px;
+    font-weight: 500;
 }
-
+ 
 /* Estilos section */
 section,
 footer {
     padding: 40px;
 }
-
-section>div {
-
+ 
+section > div {
     display: flex;
 }
-
+ 
 h2 {
     font-size: 2rem;
     text-align: center;
 }
-
+ 
 /* Estilos cards */
-#card-section>div {
+#card-section > div {
     display: flex;
 }
-
+ 
 .card {
     border-radius: 20px;
     padding: 20px;
@@ -91,39 +90,38 @@ h2 {
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px #ccc;
     margin: 20px 10px;
-
 }
-
-.card>h3 {
+ 
+.card > h3 {
     color: var(--color-secundario);
     font-size: 1.5em;
     margin: 20px 0;
 }
-
-/* Estilos contacto*/
+ 
+/* Estilos contacto */
 .contacto,
 .formulario {
     padding: 30px;
 }
-
+ 
 .contacto {
     width: 50%;
     text-align: right;
 }
-
-.contacto>p {
+ 
+.contacto > p {
     line-height: 2;
     color: var(--color-texto);
 }
-
-.contacto>p>span {
+ 
+.contacto > p > span {
     font-weight: bold;
 }
-
+ 
 .formulario {
     width: 50%;
 }
-
+ 
 form {
     color: #fff;
     display: flex;
@@ -131,56 +129,156 @@ form {
     background-color: var(--color-principal);
     padding: 40px 40px 10px;
 }
-
+ 
 form input {
     margin-bottom: 30px;
 }
-
+ 
 input {
     border-radius: 20px;
     outline: none;
     padding: 8px;
 }
-
+ 
 input[type="submit"] {
     background-color: var(--color-principal);
     border: 2px solid #fff;
     color: #fff;
-
 }
-
-/*footer*/
+ 
+/* Footer */
 footer {
     background-color: var(--color-principal);
     display: flex;
 }
-
-footer>div {
+ 
+footer > div {
     width: 50%;
 }
-
+ 
 footer h4 {
     color: #fff;
     margin-bottom: 20px;
 }
-
+ 
 footer ul {
     line-height: 2.5;
 }
-
+ 
 .news-letter {
     position: relative;
 }
-
-.news-letter>input[type="text"] {
+ 
+.news-letter > input[type="text"] {
     width: 100%;
 }
-
-.news-letter>input[type="submit"] {
+ 
+.news-letter > input[type="submit"] {
     position: absolute;
     width: 100px;
     right: 0;
 }
+ 
+footer .nombre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    opacity: 0.5;
+} 
 
-/*** Responsive */
 
+/*       RESPONSIVE      */
+/* ===================== */
+ 
+/* Tablets (max 768px) */
+@media (max-width: 768px) {
+ 
+    /* Nav: centrar los links */
+    nav ul {
+        justify-content: center;
+    }
+ 
+    /* Cards: dos por fila */
+    #card-section > div {
+        flex-wrap: wrap;
+    }
+ 
+    .card {
+        width: 45%;
+    }
+ 
+    /* Contacto: apilar columnas */
+    section > div {
+        flex-direction: column;
+    }
+ 
+    .contacto,
+    .formulario {
+        width: 100%;
+        text-align: left;
+    }
+ 
+    /* Footer: apilar columnas */
+    footer {
+        flex-direction: column;
+        gap: 30px;
+    }
+ 
+    footer > div {
+        width: 100%;
+    }
+}
+ 
+/* Móviles (max 480px) */
+@media (max-width: 480px) {
+ 
+    /* Header más compacto */
+    .bg-header {
+        height: 200px;
+    }
+ 
+    .bg-header h1 {
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+ 
+    /* Secciones y footer con menos padding */
+    section,
+    footer {
+        padding: 20px;
+    }
+ 
+    h2 {
+        font-size: 1.5rem;
+    }
+ 
+    /* Cards: una por fila */
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+ 
+    /* Formulario: padding reducido */
+    form {
+        padding: 20px 20px 10px;
+    }
+ 
+    .contacto,
+    .formulario {
+        padding: 10px 0;
+    }
+}
+ 
+/* Pantallas muy pequeñas (max 300px) */
+@media (max-width: 300px) {
+    main {
+        background-color: burlywood;
+    }
+ 
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
